@@ -54,28 +54,28 @@ Admin should:
 ### Cloning
 * In your terminal:
 
-        $ git clone
-        $ cd Instrapicha
+      * git clone
+      * cd Insta_Site
 
         ## Running the Application
         * Creating the virtual environment
 
-                $ python3.6 -m venv --without-pip virtual
-                $ source virtual/bin/activate
-                $ curl https://bootstrap.pypa.io/get-pip.py | python
+              * python3.6 -m venv --without-pip virtual
+              * source virtual/bin/activate
+              * curl https://bootstrap.pypa.io/get-pip.py | python
 
         * Installing Django and other Modules
 
-                $ see Requirements.txt
+              * see Requirements.txt
 
         * To run the application, in your terminal:
 
-                $ python3.6 manage.py runserver
+              * python3.6 manage.py runserver
 
         ## Testing the Application
         * To run the tests for the class files:
 
-                $ python3.6 manage.py test images
+              * python3.6 manage.py test images
 
         ## Technologies Used
         * Python3.6
