@@ -1,4 +1,4 @@
-# Instter
+# Insta_Site
 
 
 ## Built By [John Mwangi]()
@@ -54,7 +54,7 @@ Admin should:
 ### Cloning
 * In your terminal:
 
-        $ git clone 
+        $ git clone
         $ cd Instrapicha
 
         ## Running the Application
