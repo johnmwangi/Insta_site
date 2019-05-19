@@ -55,9 +55,9 @@ body {
   min-height: 100%;
 }
 
-h2, {
-  font-family: 'Shadows Into Light', cursive;
-  text color:white;
+.h2{
+  font-family: 'Indie Flower', cursive;
+  text color:pink;
 }
 .search{
   text-align: right;
