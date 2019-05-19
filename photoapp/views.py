@@ -22,13 +22,13 @@ def signup(request):
             current_user.is_active = False
             current_user.save()
             current_site = get_current_site(request)
-            mail_subject = 'Activate your insta account.'
+            mail_subject = 'Activate your instapicha account.'
             message = render_to_string('acc_active_email.html', {
                 'user': current_user,
                 'domain': current_site.domain,
                 'uid':urlsafe_base64_encode(force_bytes(current_user.pk)),
                 'token':account_activation_token.make_token(current_user),
-            })
+                })
             to_email = form.cleaned_data.get('email')
             email = EmailMessage(
                         mail_subject, message, to=[to_email]
@@ -50,7 +50,7 @@ def activate(request, uidb64, token):
         current_user.save()
         login(request, current_user)
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. <a href="https://instacool.herokuapp.com"> Login </a> Now you can login your account.')
+        return HttpResponse('Thank you for your email confirmation. <a href="https://instapichas.herokuapp.com"> Login </a> Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
 
@@ -59,7 +59,6 @@ def home(request):
     images = Image.get_images()
     comments = Comment.get_comment()
     profile = Profile.get_profile()
-
     current_user = request.user
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -94,6 +93,7 @@ def profile(request,profile_id):
 #             return redirect('profile')
 #     else:
 #         form = EditProfileForm()
+form = EditProfileForm()
 #     return render(request,'profile/edit.html',{"form":form})
 
 
@@ -191,7 +191,7 @@ def add_comment(request,pk):
             comment.poster = current_user
             comment.save()
             return redirect('home')
-    else:
+            else:
         form = CommentForm()
         return render(request,'comment.html',{"user":current_user,"comment_form":form})
 
@@ -224,4 +224,4 @@ def follow(request,operation,id):
         return redirect('home')
     elif operation=='unfollow':
         Follow.unfollow(request.user,current_user)
-        return redirect('home')
+         return redirect('home')
