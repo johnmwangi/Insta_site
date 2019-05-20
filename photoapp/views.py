@@ -50,7 +50,7 @@ def activate(request, uidb64, token):
         current_user.save()
         login(request, current_user)
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. <a href="https://instapichas.herokuapp.com"> Login </a> Now you can login your account.')
+        return HttpResponse('Thank you for your email confirmation. <a href="https://instter.herokuapp.com"> Login </a> Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
 
