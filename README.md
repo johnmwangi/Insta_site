@@ -31,7 +31,7 @@ Admin should:
 ## Specifications
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| Admin Authentication | On demand | Access Admin dashboard |
+| Admin Authentication | **On demand** | Access Admin dashboard |
 | User Authentication | **On demand, verify emails before proceeding** | Access Admin dashboard |
 | Display all images with comments and likes | **Home page** | Clickable links to open any images in a modal |
 | Display single images on modal | **On  click** | All details should be viewed|
@@ -43,21 +43,20 @@ Admin should:
 | Comment on images | **Add comments below respective image** | Users can add comments on any image|
 | Like images | **Add likes to an image** | Users can add likes to images they like|
 
-
 ## SetUp / Installation Requirements
-### Prerequisites
+## Prerequisites
 * python3.6
 * pip
 * virtualenv
 * Requirements.txt
 
-### Cloning
+## Cloning
 * In your terminal:
 
       * git clone
       * cd Insta_Site
 
-        ## Running the Application
+        Running the Application
         * Creating the virtual environment
 
               * python3.6 -m venv --without-pip virtual
@@ -72,16 +71,16 @@ Admin should:
 
               * python3.6 manage.py runserver
 
-        ## Testing the Application
+         Testing the Application
         * To run the tests for the class files:
 
               * python3.6 manage.py test images
 
-        ## Technologies Used
+         Technologies Used
         * Python3.6
         * Django  framework and postgresql database
 
-        ## Known Bugs
+         Known Bugs
         * User must add profile before uploading an image or viewing profiles
         * Multiple likes can be done on single image
 
