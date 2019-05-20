@@ -41,6 +41,7 @@
             {%endfor%}
             {{form.media}}
 
+
             <form action="{%url 'comment' pk=image.id%}" method="post" enctype="multipart/form-data" id="hello">
               {%csrf_token%}
 

@@ -28,7 +28,7 @@ def signup(request):
                 'domain': current_site.domain,
                 'uid':urlsafe_base64_encode(force_bytes(current_user.pk)),
                 'token':account_activation_token.make_token(current_user),
-                })
+            })
             to_email = form.cleaned_data.get('email')
             email = EmailMessage(
                         mail_subject, message, to=[to_email]
@@ -59,6 +59,7 @@ def home(request):
     images = Image.get_images()
     comments = Comment.get_comment()
     profile = Profile.get_profile()
+
     current_user = request.user
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -93,7 +94,6 @@ def profile(request,profile_id):
 #             return redirect('profile')
 #     else:
 #         form = EditProfileForm()
-form = EditProfileForm()
 #     return render(request,'profile/edit.html',{"form":form})
 
 
@@ -191,7 +191,7 @@ def add_comment(request,pk):
             comment.poster = current_user
             comment.save()
             return redirect('home')
-            else:
+    else:
         form = CommentForm()
         return render(request,'comment.html',{"user":current_user,"comment_form":form})
 
@@ -224,4 +224,4 @@ def follow(request,operation,id):
         return redirect('home')
     elif operation=='unfollow':
         Follow.unfollow(request.user,current_user)
-         return redirect('home')
+        return redirect('home')
