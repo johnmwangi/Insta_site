@@ -26,7 +26,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -46,7 +46,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           'ENGINE': 'django.db.backends.postgresql',
            'NAME': config('DB_NAME'),
            'USER': config('DB_USER'),
            'PASSWORD': config('DB_PASSWORD'),
