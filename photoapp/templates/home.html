@@ -8,8 +8,8 @@
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <div class="container-fluid">
 
-  <p><a href="{% url 'add_profile' %}" class="btn btn-info">+ profile</a></p>
-  <p><a href="{% url 'upload' %}" class="btn btn-info">+ photo</a>
+  <p><a href="{% url 'add_profile' %}" class="btn btn-danger">+ profile</a></p>
+  <p><a href="{% url 'upload' %}" class="btn btn-danger">+ photo</a>
 
     <div class="row">
     <div class="col-1"></div>
@@ -72,8 +72,8 @@
           {% endfor %}
         </header>
         <hr>
-        <p style="float:left; font-size:15px; font-weight:bolder; color:grey">Stories</p>
-        <p style="float:right; font-weight:bolder; font-size:15px"><a style="color:grey" href="">View All</a></p>
+        <p style="float:left; font-size:15px; font-weight:bolder; color:warming">Stories</p>
+        <p style="float:right; font-weight:bolder; font-size:15px"><a style="color:warming" href="">View All</a></p>
         <div class="all" style="overflow-y:auto; height:400px;margin-top:50px;padding:10px; border-bottom: 1px solid ; width:100%">
           <hr>
           {% for profile in profile %}
@@ -83,8 +83,8 @@
             <a href="{% url 'all' pk=profile.pk %}">
               <p style="font-size:16px">{{profile.user}}<br>
 
-                <a href="/follow/follow/{{profile.user.id}}/" class="btn btn-outline-secondary btn-sm">{{follow}}follow</a>
-                <a href="/follow/unfollow/{{profile.user.id}}/" class="btn btn-outline-secondary btn-sm">{{unfollow}}unfollow</a>
+                <a href="/follow/follow/{{profile.user.id}}/" class="btn btn-outline-danger btn-sm">{{follow}}follow</a>
+                <a href="/follow/unfollow/{{profile.user.id}}/" class="btn btn-outline-danger btn-sm">{{unfollow}}unfollow</a>
 
           </div>
           {% endif %}
