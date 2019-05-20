@@ -33,7 +33,6 @@ Admin should:
 | :---------------- | :---------------: | ------------------: |
 
 | User Authentication | **On demand, verify emails before proceeding** | Access Admin dashboard |
-| Admin Authentication | **On demand** | Access Admin dashboard |
 | Display all images with comments and likes | **Home page** | Clickable links to open any images in a modal |
 | Display single images on modal | **On  click** | All details should be viewed|
 | To add an image  | **Through Admin dashboard and homepage** | Click on add and upload respectively|
