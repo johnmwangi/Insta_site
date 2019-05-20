@@ -9,7 +9,7 @@
 body {
   background-image: url('/static/img/black.jpg');
     z-index: 0;
-    background-color: black;
+    background-color: white;
     background-blend-mode: lighten;
 
 }
