@@ -5,7 +5,8 @@
 
 ## Description
 This is the a clone of the Instagram Web application developed all from scratch using the help of Django Framework, application allows users to upload, like and comment on other peoples images. Images must have captions and users have profiles where they can see all their images. The admin is  currently responsible for editing or deleting images.
-**Users must log in with credible emails**
+
+## Users must log in with credible emails.
 
 ## User Stories
 These are the behaviours/features that the application implements for use by a user.
