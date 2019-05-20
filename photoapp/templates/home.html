@@ -8,8 +8,8 @@
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <div class="container-fluid">
 
-  <p><a href="{% url 'add_profile' %}" class="btn btn-danger">+ profile</a></p>
-  <p><a href="{% url 'upload' %}" class="btn btn-danger">+ photo</a>
+  <p><a href="{% url 'add_profile' %}" class="btn btn-info">+ profile</a></p>
+  <p><a href="{% url 'upload' %}" class="btn btn-info">+ photo</a>
 
     <div class="row">
     <div class="col-1"></div>
@@ -23,9 +23,9 @@
         </div>
         <img src="{{image.insta_image.url}}" class="card-img-top" data-target="#extraModal{{image.id}}" data-toggle="modal">
         <div class="card-body">
-          <div class="header"
+          <div class="header">
             <a id="like" href="{% url 'like' operation='like' pk=image.id%}"><i class="far fa-heart" style="margin-right:10px;color:black;"></i></a>
-            <a href="#hello" style="color:white;"><i class="far fa-comment"></i></a>
+            <a href="#sema" style="color:black;"><i class="far fa-comment"></i></a>
             <a href="/upload"><i class="far fa-arrow-alt-circle-up" style="margin-right:15px;color:black;"></i></a>
 
           </div>
@@ -41,8 +41,7 @@
             {%endfor%}
             {{form.media}}
 
-
-            <form action="{%url 'comment' pk=image.id%}" method="post" enctype="multipart/form-data" id="hello">
+            <form action="{%url 'comment' pk=image.id%}" method="post" enctype="multipart/form-data" id="sema">
               {%csrf_token%}
 
               {% bootstrap_form form%}
@@ -73,9 +72,9 @@
           {% endfor %}
         </header>
         <hr>
-      <h2>  <p style="float:left; font-size:18px; font-weight:bolder; color:pink">Stories</p></h2>
-      <h2>  <p style="float:right; font-weight:bolder; font-size:18px"><a style="color:pink" href="">View All</a></p></h2>
-        <div class="all" style="overflow-y:auto; height:400px;margin-top:50px;padding:10px; border-bottom: 3px solid ; width:100%">
+        <p style="float:left; font-size:15px; font-weight:bolder; color:grey">Stories</p>
+        <p style="float:right; font-weight:bolder; font-size:15px"><a style="color:grey" href="">View All</a></p>
+        <div class="all" style="overflow-y:auto; height:400px;margin-top:50px;padding:10px; border-bottom: 1px solid ; width:100%">
           <hr>
           {% for profile in profile %}
           {% if profile.user != user %}
@@ -84,8 +83,8 @@
             <a href="{% url 'all' pk=profile.pk %}">
               <p style="font-size:16px">{{profile.user}}<br>
 
-                <a href="/follow/follow/{{profile.user.id}}/" class="btn btn-outline-danger btn-sm">{{follow}}follow</a>
-                <a href="/follow/unfollow/{{profile.user.id}}/" class="btn btn-outline-danger btn-sm">{{unfollow}}unfollow</a>
+                <a href="/follow/follow/{{profile.user.id}}/" class="btn btn-outline-secondary btn-sm">{{follow}}follow</a>
+                <a href="/follow/unfollow/{{profile.user.id}}/" class="btn btn-outline-secondary btn-sm">{{unfollow}}unfollow</a>
 
           </div>
           {% endif %}
@@ -112,7 +111,7 @@
         <p>About: {{image.caption}}</p>
         <label>{{image.likes}} Likes</label>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
